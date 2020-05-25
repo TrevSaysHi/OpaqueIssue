@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Test/TreeTrunkMesh2.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://Test/TreeLeavesMesh2.tres" type="ArrayMesh" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 20, 20 )
+
+[node name="Tree" type="Spatial"]
+
+[node name="Leaf" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="Trunk" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.724617, 0.689152, 0, -0.689152, 0.724617, 0, 4.95574, 4.06321 )
+shadow_enabled = true
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.873679, -0.158133, 0.460086, 0, 0.9457, 0.32504, -0.486503, -0.283981, 0.826238, 3.9976, 4.98658, 7.29008 )
